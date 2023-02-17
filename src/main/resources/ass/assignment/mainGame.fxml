@@ -4,32 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextField layoutX="14.0" layoutY="47.0" promptText="Enter your Name" />
-            <Button layoutX="169.0" layoutY="48.0" mnemonicParsing="false" text="Submit" />
-            <Button layoutX="247.0" layoutY="148.0" mnemonicParsing="false" text="Number" textFill="#c93e3e" />
-            <Label layoutX="436.0" layoutY="51.0" prefHeight="17.0" prefWidth="108.0" text="Attempts left:2">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="134.0" layoutY="128.0" prefHeight="17.0" prefWidth="346.0" text="Press the button to Generate The Number!">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="118.0" layoutY="173.0" prefHeight="28.0" prefWidth="330.0" />
-            <Button fx:id="button1" layoutX="101.0" layoutY="246.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="95.0" style="-fx-background-color: #1589FF; -fx-background-radius: 70px;" />
-            <Button fx:id="button2" layoutX="254.0" layoutY="247.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="93.0" style="-fx-background-color: #1589FF; -fx-background-radius: 70px;" />
-            <Button fx:id="button3" layoutX="404.0" layoutY="247.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="89.0" style="-fx-background-color: #1589FF; -fx-background-radius: 70px;" />
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ass.assignment.mainGameController">
+   <children>
+      <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" />
+      <Button fx:id="submutB" layoutX="170.0" layoutY="14.0" mnemonicParsing="false" onAction="#takeNameSB" text="Submit" />
+      <Label fx:id="attempMSG" layoutX="460.0" layoutY="18.0" prefHeight="17.0" prefWidth="54.0" text="Attempt" />
+      <Button fx:id="ganarate" layoutX="258.0" layoutY="188.0" mnemonicParsing="false" onAction="#genarateNumber" text="Number" />
+      <Label fx:id="lvlPress" layoutX="156.0" layoutY="145.0" text="Press the Button To Ganarate The Number!">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="afterNumGenerate" layoutX="154.0" layoutY="221.0" prefHeight="17.0" prefWidth="304.0" />
+      <Circle fx:id="c1" fill="DODGERBLUE" layoutX="102.0" layoutY="316.0" onMouseClicked="#c1Circleclick" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="c2" fill="DODGERBLUE" layoutX="288.0" layoutY="316.0" onMouseClicked="#c2CircleClick" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="c3" fill="DODGERBLUE" layoutX="479.0" layoutY="316.0" onMouseClicked="#c3CircleClick" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="attempShow" layoutX="516.0" layoutY="18.0" text="2" />
+   </children>
+</AnchorPane>
