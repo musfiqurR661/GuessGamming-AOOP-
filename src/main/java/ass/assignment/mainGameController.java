@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,10 +15,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 
-public class mainGameController  {
+public class mainGameController implements Initializable {
 
     @FXML
     private Label afterNumGenerate;
@@ -35,7 +38,8 @@ public class mainGameController  {
     private Circle c3;
 
     @FXML
-    private Button submutB;
+    private Button submitBname;
+
     @FXML
     private Label attempShow;
     @FXML
@@ -67,41 +71,14 @@ public class mainGameController  {
     private Label lvlPress;
 
     @FXML
-    private TextField textField;
+    private TextField textInput;
 
-//    @FXML
-//    void c1CircleClick(InputMethodEvent event) {
-//        if (genarateNumber == 1) {
-//            System.out.println("YOU WIN");
-//        } else {
-//           countChange();
-//        }
-//    }
-//
-//    @FXML
-//    void c2CircleClick(InputMethodEvent event) {
-//        if (genarateNumber == 2) {
-//            System.out.println("Ou win");
-//        } else {
-//          countChange();
-//        }
-//
-//    }
-//
-//    @FXML
-//    void c3Circleclick(InputMethodEvent event) {
-//        if (genarateNumber == 3) {
-//            System.out.println("You win");
-//        } else {
-//          countChange();
-//        }
-//
-//    }
 
     @FXML
     void c1Circleclick(MouseEvent event) throws IOException {
         if (genarateNumber == 1) {
-            System.out.println("YOU WIN");
+            //System.out.println("YOU WIN");
+            Winn(event);
         } else {
             countChange(event);
         }
@@ -111,7 +88,8 @@ public class mainGameController  {
     @FXML
     void c2CircleClick(MouseEvent event) throws IOException {
         if (genarateNumber == 2) {
-            System.out.println("YOU WIN");
+           // System.out.println("YOU WIN");
+            Winn(event);
         } else {
            countChange(event);
      }
@@ -121,25 +99,25 @@ public class mainGameController  {
     @FXML
     void c3CircleClick(MouseEvent event) throws IOException {
         if (genarateNumber == 3) {
-            System.out.println("YOU WIN");
+           // System.out.println("YOU WIN");
+            Winn(event);
         } else {
             countChange(event);
+            //System.out.println("You Lose");
         }
 
     }
-
+//public class info{
+//        public static String exectName="";
+//}
+    public static String exectName=" ";
     @FXML
-    void takeNameSB(ActionEvent event) {
-
+    void takeNameSBclick(ActionEvent event) throws IOException {
+     exectName=submitBname.getText();
 
     }
 
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        attempShow.setText(""+attempsCount);
-//
-//
-//    }
+
     public void countChange(Event event) throws IOException {
        attempsCount--;
        if(attempsCount>0)
@@ -149,15 +127,30 @@ public class mainGameController  {
        else
        {
 
-           Parent root= FXMLLoader.load(getClass().getResource("firstScene.fxml"));
+           Parent root= FXMLLoader.load(getClass().getResource("loss.fxml"));
            stage= (Stage) ((Node)event.getSource()).getScene().getWindow();
            scene=new Scene(root);
            stage.setScene(scene);
            stage.show();
+
        }
+    }
+    public void Winn(Event event) throws IOException {
+       WinResult resultWin =new WinResult();
+        Parent root = FXMLLoader.load(getClass().getResource("win.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //for set initial text in textfield
+        textInput.setText("Enter Your Name");
+
+    }
 }
