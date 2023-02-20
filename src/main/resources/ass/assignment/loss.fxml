@@ -2,9 +2,13 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ass.assignment.LossResult">
    <children>
-      <Label fx:id="lossResult" layoutX="272.0" layoutY="175.0" text="You Loss" />
+      <Label fx:id="lossResult" alignment="CENTER" layoutX="143.0" layoutY="175.0" prefHeight="26.0" prefWidth="349.0" textAlignment="CENTER" textFill="#fc3030">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
    </children>
 </AnchorPane>

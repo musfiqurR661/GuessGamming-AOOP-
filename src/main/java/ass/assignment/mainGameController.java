@@ -21,7 +21,9 @@ import java.util.ResourceBundle;
 
 
 public class mainGameController implements Initializable {
-
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     @FXML
     private Label afterNumGenerate;
 
@@ -38,7 +40,7 @@ public class mainGameController implements Initializable {
     private Circle c3;
 
     @FXML
-    private Button submitBname;
+    private Button submitNameButton;
 
     @FXML
     private Label attempShow;
@@ -46,25 +48,16 @@ public class mainGameController implements Initializable {
     private Button ganarate;
 
     static int attempsCount = 2;
-    //
-////int
-//    @FXML
-//    void genarateNumber(ActionEvent event) {
-//        Random random = new Random();
-//        int randomNumber = random.nextInt(100);
-//        BreakIterator randomNumberLabel = null;
-//        randomNumberLabel.setText(Integer.toString(randomNumber));
-//
-//    }
+
     int genarateNumber;
 
-
+     //Genarate number Randomlly
     @FXML
     void genarateNumber() {
         Random random = new Random();
         genarateNumber = random.nextInt(1, 4);
-        afterNumGenerate.setText("Your Number is Generated, Guess the number from the circle");
-        System.out.println(genarateNumber);
+        afterNumGenerate.setText("Your Number is Generated, Guess the Number and select the proper Circle");
+        //System.out.println(genarateNumber);
     }
 
     @FXML
@@ -80,7 +73,7 @@ public class mainGameController implements Initializable {
             //System.out.println("YOU WIN");
             Winn(event);
         } else {
-            countChange(event);
+            changeCount(event);
         }
 
     }
@@ -91,7 +84,7 @@ public class mainGameController implements Initializable {
            // System.out.println("YOU WIN");
             Winn(event);
         } else {
-           countChange(event);
+           changeCount(event);
      }
 
     }
@@ -102,23 +95,24 @@ public class mainGameController implements Initializable {
            // System.out.println("YOU WIN");
             Winn(event);
         } else {
-            countChange(event);
+
             //System.out.println("You Lose");
+            changeCount(event);
         }
 
     }
-//public class info{
-//        public static String exectName="";
-//}
-    public static String exectName=" ";
+    //class
+    // public class info{
+    // public static String exectName="";
+    //}
+    public static String yourName=" ";
     @FXML
     void takeNameSBclick(ActionEvent event) throws IOException {
-     exectName=submitBname.getText();
-
+     yourName=textInput.getText();
     }
 
 
-    public void countChange(Event event) throws IOException {
+    public void changeCount(Event event) throws IOException {
        attempsCount--;
        if(attempsCount>0)
        {
@@ -135,6 +129,7 @@ public class mainGameController implements Initializable {
 
        }
     }
+    //win scene handel
     public void Winn(Event event) throws IOException {
        WinResult resultWin =new WinResult();
         Parent root = FXMLLoader.load(getClass().getResource("win.fxml"));
@@ -143,9 +138,7 @@ public class mainGameController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

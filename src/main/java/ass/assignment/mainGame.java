@@ -11,7 +11,8 @@ public class mainGame extends Application {
     public void start(Stage primaryStage) throws Exception {
         //root
         Parent root = FXMLLoader.load(getClass().getResource("mainGame.fxml"));
-//stage mane name
+
+        //stage mane name
         primaryStage.setTitle("Guess The Number !!");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

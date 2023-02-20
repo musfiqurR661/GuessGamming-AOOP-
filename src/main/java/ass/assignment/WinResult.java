@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static ass.assignment.mainGameController.exectName;
+import static ass.assignment.mainGameController.yourName;
 
 
 public class WinResult implements Initializable {
@@ -17,7 +17,7 @@ public class WinResult implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        winResult.setText(exectName+ "You Win !");
+        winResult.setText(yourName +" YOU WON!!!");
 
     }
 }

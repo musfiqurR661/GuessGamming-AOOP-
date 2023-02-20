@@ -7,21 +7,30 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ass.assignment.mainGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ass.assignment.mainGameController">
    <children>
       <TextField fx:id="textInput" layoutX="14.0" layoutY="14.0" />
       <Button fx:id="submitBname" layoutX="170.0" layoutY="14.0" mnemonicParsing="false" onAction="#takeNameSBclick" text="Submit" />
-      <Label fx:id="attempMSG" layoutX="460.0" layoutY="18.0" prefHeight="17.0" prefWidth="54.0" text="Attempt" />
-      <Button fx:id="ganarate" layoutX="258.0" layoutY="188.0" mnemonicParsing="false" onAction="#genarateNumber" text="Number" />
+      <Label fx:id="attempMSG" layoutX="500.0" layoutY="18.0" prefHeight="21.0" prefWidth="112.0" text="Attempts Left :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="ganarate" alignment="CENTER" layoutX="278.0" layoutY="190.0" mnemonicParsing="false" onAction="#genarateNumber" text="Number" textAlignment="CENTER" textFill="#ff2222" />
       <Label fx:id="lvlPress" layoutX="156.0" layoutY="145.0" text="Press the Button To Ganarate The Number!">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="afterNumGenerate" layoutX="154.0" layoutY="221.0" prefHeight="17.0" prefWidth="304.0" />
-      <Circle fx:id="c1" fill="DODGERBLUE" layoutX="102.0" layoutY="316.0" onMouseClicked="#c1Circleclick" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="c2" fill="DODGERBLUE" layoutX="288.0" layoutY="316.0" onMouseClicked="#c2CircleClick" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="c3" fill="DODGERBLUE" layoutX="479.0" layoutY="316.0" onMouseClicked="#c3CircleClick" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="attempShow" layoutX="516.0" layoutY="18.0" text="2" />
+      <Label fx:id="afterNumGenerate" alignment="CENTER" layoutX="29.0" layoutY="224.0" prefHeight="20.0" prefWidth="592.0" textAlignment="CENTER" textFill="#c33535">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Circle fx:id="c1" fill="DODGERBLUE" layoutX="141.0" layoutY="316.0" onMouseClicked="#c1Circleclick" radius="52.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="c2" fill="DODGERBLUE" layoutX="325.0" layoutY="316.0" onMouseClicked="#c2CircleClick" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="c3" fill="DODGERBLUE" layoutX="509.0" layoutY="316.0" onMouseClicked="#c3CircleClick" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="attempShow" alignment="CENTER" layoutX="605.0" layoutY="16.0" prefHeight="21.0" prefWidth="15.0" text="2" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
    </children>
 </AnchorPane>

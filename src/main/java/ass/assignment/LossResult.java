@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static ass.assignment.mainGameController.exectName;
+import static ass.assignment.mainGameController.yourName;
 
 
 public class LossResult implements Initializable {
@@ -19,6 +19,6 @@ public class LossResult implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-     lossResult.setText(exectName+ "You Lost !");
+     lossResult.setText(yourName + " YOU LOST!!!");
     }
 }
